@@ -41,7 +41,8 @@ A two-page interactive Power BI dashboard:
 - **Churn Overview**: KPI summary (total customers, churned customers, overall churn rate), churn rate broken out by order category, satisfaction score, and tenure bucket, plus slicers for city tier, gender, payment mode, and marital status.
 - **Customer Detail**: row-level table for drilling into individual customer records.
 
-*(Add dashboard screenshots here once exported. Power BI: File → Export → Export to image, or a full published-report link if you publish to web.)*
+![Churn Overview](screenshots/overview.png)
+![Customer Detail](screenshots/detail.png)
 
 ## Project Structure
 
