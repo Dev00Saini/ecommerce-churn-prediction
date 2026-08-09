@@ -77,7 +77,7 @@ cd ../sql
 python run_queries.py          # runs the SQL analysis queries
 ```
 
-To view the dashboard, open the `.pbix` file in Power BI Desktop and refresh the data source to point at `data/ecommerce_churn_for_powerbi.csv`.
+The full interactive report is available at `powerbi/churn_dashboard.pbix`. Open in Power BI Desktop.
 
 ## Tech Stack
 
