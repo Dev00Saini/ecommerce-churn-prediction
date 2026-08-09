@@ -30,6 +30,24 @@ for col in numeric_cols_with_nulls:
 # Sanity check -- should be all zeros now
 assert df.isnull().sum().sum() == 0, "Still have nulls after fill!"
 
+# --- 2b. Fix inconsistent category labels ---
+# The raw data has duplicate categories that are really the same thing
+# (probably from manual data entry or a survey with free-text options).
+# Left as-is, these split the signal across two labels instead of one --
+# e.g. "Mobile Phone" and "Mobile" show up as separate bars/features even
+# though they mean the same category.
+df["PreferedOrderCat"] = df["PreferedOrderCat"].replace({
+    "Mobile Phone": "Mobile"
+})
+df["PreferredPaymentMode"] = df["PreferredPaymentMode"].replace({
+    "CC": "Credit Card",
+    "COD": "Cash on Delivery"
+})
+
+print("\nCategories after cleanup:")
+print("PreferedOrderCat:", sorted(df["PreferedOrderCat"].unique()))
+print("PreferredPaymentMode:", sorted(df["PreferredPaymentMode"].unique()))
+
 # --- 3. Write to SQLite ---
 conn = sqlite3.connect("../data/churn.db")
 df.to_sql("customers", conn, if_exists="replace", index=False)

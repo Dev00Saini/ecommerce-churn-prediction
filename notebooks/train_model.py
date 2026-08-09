@@ -15,7 +15,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 conn = sqlite3.connect("../data/churn.db")
 df = pd.read_sql("SELECT * FROM customers", conn)
 conn.close()
-print("worked")
+
 # --- 2. Prepare features ---
 # Drop the ID (not predictive) and separate the target (Churn)
 X = df.drop(columns=["CustomerID", "Churn"])
