@@ -39,9 +39,8 @@ Logistic Regression is included as an interpretable baseline; Random Forest is t
 A two-page interactive Power BI dashboard:
 
 - **Churn Overview**: KPI summary (total customers, churned customers, overall churn rate), churn rate broken out by order category, satisfaction score, and tenure bucket, plus slicers for city tier, gender, payment mode, and marital status.
-- **Customer Detail**: row-level table for drilling into individual customer records.
-
 ![Churn Overview](screenshots/overview.png)
+- **Customer Detail**: row-level table for drilling into individual customer records.
 ![Customer Detail](screenshots/detail.png)
 
 ## Project Structure
